@@ -24,7 +24,7 @@ row = [0.99885,0.997,0.928,1,1]
     # Options must be specified this way because the function modifies the
     # dictionary passed to the parameter `options`.
 result = minimize(
-        lambda x, row: -((row[0]**x[0] + row[1]**x[0] + row[2]**x[0] + 0.1*row[3]**x[0] + 0.1*row[4]**x[0])**(1/x[0])), x0, row,
+        lambda x, row: -((0.3*row[0]**x[0] + 0.3*row[1]**x[0] + 0.3*row[2]**x[0] + 0.05*row[3]**x[0] + 0.05*row[4]**x[0])**(1/x[0])), x0, row,
         constraints, options={
             'g_rate': 1., 'l_rate': 1., 'max_velocity': 4.,
             'stable_iter': 50,'sttol': 1e-4,'savefile': 'YueLiu.csv'})
